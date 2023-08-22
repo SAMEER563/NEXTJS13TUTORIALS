@@ -9,11 +9,19 @@ const TextContainer = styled("div")({
   justifyContent: "center",
 });
 
+export const StyledButton = styled(Box)({
+  border:'1px solid white',
+  width:'120px',
+  padding:1,
+  cursor:'pointer',
+  textAlign:'center',
+})
+
 const StyledLink = styled(Box)(({ fontSize, myColor }) => ({
   fontSize: fontSize,
   fontFamily: "source-serif-pro, Source Serif Pro",
   fontWeight: "bold",
-  color: myColor ? myColor : "black",
+  color: myColor ? myColor : "",
   cursor: "pointer",
   lineHeight: 1,
   ":hover": {
@@ -67,6 +75,8 @@ const Card = (props) => {
             <Typography variant="h6" fontWeight={900}>
               {props.author}
             </Typography>
+            {props.Button ? <StyledButton>{props.ButtonText}</StyledButton> : ""}
+            
           </TextContainer>
         </Box>
     </Stack>
